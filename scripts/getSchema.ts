@@ -1,4 +1,4 @@
-import apolloConfig from '../apollo.config';
+import config from '../.graphqlrc';
 import { writeFile } from 'fs';
 import { promisify } from 'util';
 import { getIntrospectionQuery } from 'graphql';
@@ -13,7 +13,7 @@ const getSchema = async () => {
         query: qgl`${introspectionQuery}`,
     });
 
-    await _writeFile(apolloConfig.client.service.localSchemaFile, JSON.stringify(result.data, null, 2));
+    await _writeFile(config.client.service.localSchemaFile, JSON.stringify(result.data, null, 2));
     console.log('Done!');
 }
 

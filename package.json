@@ -3,6 +3,11 @@
   "private": false,
   "description": "Multi-language website example with Next.js using Prismic headless CMS",
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.19.4",
+    "@graphql-codegen/plugin-helpers": "^1.18.2",
+    "@graphql-codegen/typescript": "^1.19.0",
+    "@graphql-codegen/typescript-operations": "^1.17.12",
+    "@graphql-codegen/typescript-react-apollo": "^2.2.1",
     "@types/node": "^14.14.14",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
@@ -17,6 +22,8 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "graphql-let": "^0.16.3",
+    "js-yaml": "^3.14.1",
     "prettier": "^2.1.2",
     "sass": "^1.30.0",
     "sass-loader": "^10.1.0",
@@ -40,8 +47,9 @@
   },
   "scripts": {
     "schema": "ts-node -T -O '{ \"module\": \"commonjs\" }' ./scripts/getSchema.ts",
-    "dev": "next",
-    "build": "next build",
+    "codegen": "graphql-let",
+    "dev": "yarn codegen && next",
+    "build": "yarn codegen && next build",
     "start": "next start"
   },
   "repository": {

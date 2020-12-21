@@ -14,6 +14,8 @@ const Homepage = ({ doc, menu, lang, preview }) => {
 
     useUpdatePreviewRef(preview, doc.id)
     useUpdateToolbarDocs(homepageToolbarDocs(preview.activeRef, doc.lang), [doc])
+
+    console.log('doc', doc.data);
     
     return (
       <Layout
