@@ -13,7 +13,7 @@ const getSchema = async () => {
         query: qgl`${introspectionQuery}`,
     });
 
-    await _writeFile(config.client.service.localSchemaFile, JSON.stringify(result.data, null, 2));
+    await _writeFile(config.schema, JSON.stringify(result.data, null, 2));
     console.log('Done!');
 }
 

@@ -4,7 +4,7 @@
 
 const repoName = `hki-decompression`
 const repoUrl = `https://${repoName}.cdn.prismic.io`;
-const apiEndpoint = `${repoUrl}/api`
+const apiEndpoint = `${repoUrl}/api/v2`
 const graphqlEndpoint = `${repoUrl}/graphql`
 
 // -- Access Token if the repository is not public

@@ -2,7 +2,7 @@ query Foo {
     allHomepages {
         edges {
             node {
-                display_title                
+                display_title            
             }
         }
     }

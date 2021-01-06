@@ -13,9 +13,7 @@ const Homepage = ({ doc, menu, lang, preview }) => {
   if (doc && doc.data) {
 
     useUpdatePreviewRef(preview, doc.id)
-    useUpdateToolbarDocs(homepageToolbarDocs(preview.activeRef, doc.lang), [doc])
-
-    console.log('doc', doc.data);
+    useUpdateToolbarDocs(homepageToolbarDocs(preview.activeRef, doc.lang), [doc])    
     
     return (
       <Layout
