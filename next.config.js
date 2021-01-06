@@ -1,5 +1,10 @@
+const { join } = require('path');
+
 module.exports = {
   sass: true,
+  sassOptions: {
+    includePaths: [join(__dirname, 'light/assets/css')],
+  },
   modules: true,
   i18n: {
     // These are all the locales you want to support in

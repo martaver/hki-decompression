@@ -2,7 +2,7 @@
 @import 'libs/functions';
 @import 'libs/mixins';
 @import 'libs/skel';
-@import 'font-awesome.min.css';
+@import 'font-awesome.min';
 
 /*
 	Massively by Pixelarity
@@ -14,7 +14,7 @@
 
 	#wrapper {
 		background-color:		_palette(wrapper-bg);
-		background-image:		url('../../images/overlay.png'),	linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)),	url('../../images/bg.jpg');
+		background-image:		url('../images/overlay.png'),	linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)),	url('../images/bg.jpg');
 		background-size:		auto,								auto,														100% auto;
 		background-position:	center,								center,														top center;
 		background-repeat:		repeat,								no-repeat,													no-repeat;

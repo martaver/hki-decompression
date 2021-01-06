@@ -3,7 +3,8 @@ import { Client, manageLocal } from 'utils/prismicHelpers';
 import { homepageToolbarDocs } from 'utils/prismicToolbarQueries'
 import useUpdatePreviewRef from 'utils/hooks/useUpdatePreviewRef';
 import useUpdateToolbarDocs from 'utils/hooks/useUpdateToolbarDocs';
-import { Layout, SliceZone } from 'components'
+// import { Layout, SliceZone } from 'components'
+import { Wrapper } from 'components-light/Wrapper';
 
 /**
  * Homepage component
@@ -16,14 +17,15 @@ const Homepage = ({ doc, menu, lang, preview }) => {
     useUpdateToolbarDocs(homepageToolbarDocs(preview.activeRef, doc.lang), [doc])    
     
     return (
-      <Layout
-        altLangs={doc.alternate_languages}
-        lang={lang}
-        menu={menu}
-        isPreview={preview.isActive}
-      >
-        <SliceZone sliceZone={doc.data.body} />
-      </Layout>
+      <Wrapper></Wrapper>
+      // <Layout
+      //   altLangs={doc.alternate_languages}
+      //   lang={lang}
+      //   menu={menu}
+      //   isPreview={preview.isActive}
+      // >
+      //   <SliceZone sliceZone={doc.data.body} />
+      // </Layout>
     );
   } 
 };
