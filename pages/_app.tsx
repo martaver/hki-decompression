@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 
-import 'light/assets/sass/main.scss';
+import 'public/light/assets/sass/main.scss';
 
 function MyApp({ Component, pageProps }) {
   return (
