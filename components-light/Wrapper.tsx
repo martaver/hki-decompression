@@ -9,7 +9,7 @@ function appendBodyScript(src: string) {
 export const Wrapper: React.FC = ({ children }) => {
   useEffect(() => {
     // Run the light theme's main script after all elements have loaded.
-    appendBodyScript('../assets/js/main.js');
+    appendBodyScript('/light/assets/js/main.js');
   });
 
   return (

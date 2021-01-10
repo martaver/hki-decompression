@@ -21,11 +21,11 @@ function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
 
       {/* Scripts from light */}
-      <script src="assets/js/jquery.min.js" />
-      <script src="assets/js/jquery.scrollex.min.js" />
-      <script src="assets/js/jquery.scrolly.min.js" />
-      <script src="assets/js/skel.min.js" />
-      <script src="assets/js/util.js" />
+      <script src="light/assets/js/jquery.min.js" />
+      <script src="light/assets/js/jquery.scrollex.min.js" />
+      <script src="light/assets/js/jquery.scrolly.min.js" />
+      <script src="light/assets/js/skel.min.js" />
+      <script src="light/assets/js/util.js" />
       {/*<script src="assets/js/main.js" />*/}
     </>
   );

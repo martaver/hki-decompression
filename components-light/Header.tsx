@@ -4,7 +4,7 @@ export function Header() {
   return (
     <header id="header">
       <a href="index.html" className="logo">
-        Massively
+        Helsinki Decompression 2021
       </a>
     </header>
   );

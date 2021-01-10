@@ -14,7 +14,7 @@
 			'transform 1s ease',
 			'opacity 1s ease'
 		));
-		background: rgba(255,255,255,0.175);
+		background: #474B51;
 		height: 4rem;
 		line-height: 4rem;
 		margin: -4rem auto 0 auto;
@@ -23,7 +23,7 @@
 		position: relative;
 		width: calc(100% - #{_size(padding) * 2});
 		max-width: _size(wrapper);
-		z-index: 2;
+		z-index: 3;
 
 		ul {
 			&.links {
@@ -51,6 +51,7 @@
 						font-size: 0.8rem;
 						outline: none;
 						padding: 0 2rem;
+						border: none;
 
 						&:hover {
 							color: inherit !important;
