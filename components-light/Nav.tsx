@@ -11,6 +11,9 @@ export function Nav() {
           <a href="#participate">Participate</a>
         </li>
         <li>
+          <a href="#tickets">Tickets</a>
+        </li>
+        <li>
           <a href="#program">Program</a>
         </li>
         <li>
@@ -21,9 +24,6 @@ export function Nav() {
         </li>
         <li>
           <a href="#regionals">BM Regionals</a>
-        </li>
-        <li>
-          <a href="elements">Elements</a>
         </li>
       </ul>
       <ul className="icons">

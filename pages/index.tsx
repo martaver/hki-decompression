@@ -7,12 +7,17 @@ import { Wrapper } from 'components-light/Wrapper';
 import { Intro } from '../components-light/Intro';
 import { Copyright } from '../components-light/Copyright';
 import { Footer } from '../components-light/Footer';
-import { Pagination } from '../components-light/Pagination';
-import { FeaturedPost } from '../components-light/FeaturedPost';
-import { Posts } from '../components-light/Posts';
 import { Main } from '../components-light/Main';
 import { Nav } from '../components-light/Nav';
 import { Header } from '../components-light/Header';
+import { About } from '../components-light/About';
+import { Participate } from '../components-light/Participate';
+import { Tickets } from '../components-light/Tickets';
+import { Grants } from '../components-light/Grants';
+import { Program } from '../components-light/Program';
+import { Principles } from '../components-light/Principles';
+import { Location } from '../components-light/Location';
+import { Article } from '../components-light/Article';
 
 /**
  * Homepage component
@@ -30,9 +35,51 @@ const Homepage = ({ doc, menu, lang, preview }) => {
         <Header />
         <Nav />
         <Main>
-          <FeaturedPost />
-          <Posts />
-          <Pagination />
+          <About />
+          <Participate />
+          <Grants />
+          <Tickets />
+          <Program />
+          <Principles />
+          <Location />
+          <section>
+            <Article>
+              <header
+                className="major"
+                style={{ maxWidth: '450px', margin: 'auto' }}
+              >
+                <h2>
+                  <a href="#">See you there!</a>
+                </h2>
+                <p>
+                  We look forward to sharing this expanding experience with you!
+                </p>
+              </header>
+            </Article>
+            <ul
+              className="icons alt"
+              style={{ textAlign: 'center', marginTop: '3em' }}
+            >
+              <li>
+                <a
+                  href="#"
+                  className="icon alt fa-facebook"
+                  style={{ color: '#fff' }}
+                >
+                  <span className="label">Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="icon alt fa-envelope"
+                  style={{ color: '#fff' }}
+                >
+                  <span className="label">Email</span>
+                </a>
+              </li>
+            </ul>
+          </section>
         </Main>
         <Footer />
         <Copyright />

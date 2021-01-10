@@ -18,7 +18,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "./",
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "types": ["googlemaps"]
   },
   "include": [
     "next-env.d.ts",

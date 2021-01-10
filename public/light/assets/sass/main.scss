@@ -5,6 +5,21 @@
 @import 'public/light/assets/css/font-awesome.min.css';
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900');
 
+.bg-solid {
+	background-color: _palette(bg) !important;
+	color: _palette(fg) !important;
+	h1, h2, h3, h4, h5, h6 {
+		color: _palette(fg) !important;
+	}
+}
+
+.bg-transparent {
+	background-color: rgba(255,255,255,0.1);
+	color: #ffffff;
+	h1, h2, h3, h4, h5, h6 {
+		color: #ffffff;
+	}
+}
 /*
 	Massively by Pixelarity
 	pixelarity.com | hello@pixelarity.com
