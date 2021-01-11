@@ -52,7 +52,8 @@ const Homepage = ({ doc, menu, lang, preview }) => {
                   <a href="#">See you there!</a>
                 </h2>
                 <p>
-                  We look forward to sharing this expanding experience with you!
+                  We look forward to sharing the Decompression experience with
+                  you!
                 </p>
               </header>
             </Article>
