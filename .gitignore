@@ -23,3 +23,5 @@ yarn-error.log*
 *.graphql.d.ts
 *.graphqls.d.ts
 __generated__
+
+.env

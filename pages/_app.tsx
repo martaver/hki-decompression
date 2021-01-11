@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
       {/* Scripts from light */}
       <script
         type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-pxNS3r0R_HoBfklnxwql6iJ0bmeOO9M"
+        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_TOKEN}`}
       ></script>
       <script src="light/assets/js/jquery.min.js" />
       <script src="light/assets/js/jquery.scrollex.min.js" />
