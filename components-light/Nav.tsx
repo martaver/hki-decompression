@@ -23,30 +23,17 @@ export function Nav() {
           <a href="#location">Location</a>
         </li>
         <li>
-          <a href="#regionals">BM Regionals</a>
+          <a href="http://regionals.burningman.org/" target={'__blank'}>
+            BM Regionals
+          </a>
         </li>
       </ul>
       <ul className="icons">
-        {/*<li>*/}
-        {/*  <a href="#" className="icon fa-twitter">*/}
-        {/*    <span className="label">Twitter</span>*/}
-        {/*  </a>*/}
-        {/*</li>*/}
         <li>
           <a href="#" className="icon fa-facebook">
             <span className="label">Facebook</span>
           </a>
         </li>
-        {/*<li>*/}
-        {/*  <a href="#" className="icon fa-instagram">*/}
-        {/*    <span className="label">Instagram</span>*/}
-        {/*  </a>*/}
-        {/*</li>*/}
-        {/*<li>*/}
-        {/*  <a href="#" className="icon fa-github">*/}
-        {/*    <span className="label">GitHub</span>*/}
-        {/*  </a>*/}
-        {/*</li>*/}
       </ul>
     </nav>
   );

@@ -18,21 +18,34 @@ import { Program } from '../components-light/Program';
 import { Principles } from '../components-light/Principles';
 import { Location } from '../components-light/Location';
 import { Article } from '../components-light/Article';
+import { prismicClient } from '../utils/getPrismicClient';
+import { FooQuery, FooQueryVariables } from '../graphql/foo.graphql';
+import { FooDocument } from '../__generated__/graphql/foo.graphql';
+
+export type Data = FooQuery['allHomepages']['edges'][0]['node'];
+
+type HomepageProps = {
+  data: Data;
+  preview: any;
+};
 
 /**
- * Homepage component
+ * Index component
+ *
+ * menu, lang,
  */
-const Homepage = ({ doc, menu, lang, preview }) => {
-  if (doc && doc.data) {
-    useUpdatePreviewRef(preview, doc.id);
-    useUpdateToolbarDocs(homepageToolbarDocs(preview.activeRef, doc.lang), [
-      doc,
-    ]);
+const Homepage: React.FC<HomepageProps> = ({ data, preview }) => {
+  if (data && data._meta) {
+    useUpdatePreviewRef(preview, data._meta.id);
+    useUpdateToolbarDocs(
+      homepageToolbarDocs(preview.activeRef, data._meta.lang),
+      [data]
+    );
 
     return (
       <Wrapper>
-        <Intro />
-        <Header />
+        <Intro {...{ data }} />
+        <Header site_title={data.site_title} />
         <Nav />
         <Main>
           <About />
@@ -97,24 +110,22 @@ export async function getStaticProps({
 }) {
   const ref = previewData ? previewData.ref : null;
   const isPreview = preview || false;
-  const client = Client();
-  const doc =
-    (await client.getSingle(
-      'homepage',
-      ref ? { ref, lang: locale } : { lang: locale }
-    )) || {};
-  const menu =
-    (await client.getSingle(
-      'top_menu',
-      ref ? { ref, lang: locale } : { lang: locale }
-    )) || {};
+  // const client = Client();
 
   const { currentLang, isMyMainLanguage } = manageLocal(locales, locale);
 
+  const response = await prismicClient.query<FooQuery, FooQueryVariables>({
+    query: FooDocument,
+    variables: {
+      lang: currentLang,
+    },
+  });
+
+  const data = response.data.allHomepages.edges[0].node;
+
   return {
     props: {
-      menu,
-      doc,
+      data,
       preview: {
         isActive: isPreview,
         activeRef: ref,

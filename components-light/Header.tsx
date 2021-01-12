@@ -1,10 +1,10 @@
 import React from 'react';
 
-export function Header() {
+export function Header({ site_title }) {
   return (
     <header id="header">
-      <a href="index.html" className="logo">
-        Helsinki Decompression 2021
+      <a href="/" className="logo">
+        {site_title}
       </a>
     </header>
   );

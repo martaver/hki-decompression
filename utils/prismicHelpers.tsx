@@ -4,17 +4,28 @@ import {
   apiEndpoint,
   accessToken,
   hrefResolver,
+  linkResolver,
 } from 'prismic-configuration';
 
+import React from 'react';
+import { RichText } from 'prismic-reactjs';
+
+export const richText = (rich_text_field: any) => {
+  return rich_text_field ? (
+    <RichText linkResolver={linkResolver} render={rich_text_field} />
+  ) : (
+    <></>
+  );
+};
+
 // Helper function to get the Prismic repository name from the URL
-export const [, prismicRepoName] = apiEndpoint.match(/https?:\/\/([^.]+)?\.(cdn\.)?.+/);
+export const [, prismicRepoName] = apiEndpoint.match(
+  /https?:\/\/([^.]+)?\.(cdn\.)?.+/
+);
 
 // Helper function to convert Prismic Rich Text links to Next/Link components
 export const customLink = (type, element, content) => (
-  <Link
-    key={element.data.id}
-    href={hrefResolver(element.data)}
-  >
+  <Link key={element.data.id} href={hrefResolver(element.data)}>
     <a>{content}</a>
   </Link>
 );
@@ -35,14 +46,13 @@ const createClientOptions = (req = null, prismicAccessToken = null) => {
   };
 };
 
-
 export const manageLocal = (Locales, locale) => {
   // Languages from API response
-// // Setting Master language as default language option
-const mainLanguage = Locales[0];
-// // Sets current language based on the locale
-const currentLang = locale !== undefined ? locale : mainLanguage;
-const isMyMainLanguage = mainLanguage === currentLang;
+  // // Setting Master language as default language option
+  const mainLanguage = Locales[0];
+  // // Sets current language based on the locale
+  const currentLang = locale !== undefined ? locale : mainLanguage;
+  const isMyMainLanguage = mainLanguage === currentLang;
 
-return { mainLanguage, currentLang, isMyMainLanguage }
-}
+  return { mainLanguage, currentLang, isMyMainLanguage };
+};

@@ -1,0 +1,38 @@
+fragment Link on _Linkable {
+    _linkType
+    __typename
+    ... on _ExternalLink {
+        target
+        url
+    }
+}
+
+query Foo($lang: String) {
+    allHomepages(lang: $lang) {
+        edges {
+            node {
+                _meta {
+                    id
+                    lang
+                }
+                site_title
+                intro_content
+                actions {
+                    title
+                    anchor
+                    href {
+                        ...Link
+                    }
+                }
+                social_title
+                social_links {
+                    alt
+                    fa_icon
+                    link {
+                        ...Link
+                    }
+                }
+            }
+        }
+    }
+}

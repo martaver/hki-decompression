@@ -1,0 +1,4 @@
+{
+  "ext": ".graphql",
+  "exec": "yarn codegen"
+}
