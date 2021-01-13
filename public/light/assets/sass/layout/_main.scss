@@ -101,6 +101,21 @@
 				&:nth-child(-n + 2) {
 					border-top-width: 0;
 				}
+
+				.center > * {
+					text-align: center;
+				}
+				.footer > * {
+					text-align: center;
+					font-style: italic;
+				}
+
+				ul {
+					@extend .ul-actions;
+					a {
+						@extend .button;
+					}
+				}
 			}
 
 			@include breakpoint(medium) {

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Article } from './Article';
 
-export function Footer() {
+export function PageFooter() {
   return (
     <>
       <section style={{ marginTop: '6em' }}></section>

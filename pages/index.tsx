@@ -1,26 +1,21 @@
 import React from 'react';
-import { Client, manageLocal } from 'utils/prismicHelpers';
+import { manageLocal } from 'utils/prismicHelpers';
 import { homepageToolbarDocs } from 'utils/prismicToolbarQueries';
 import useUpdatePreviewRef from 'utils/hooks/useUpdatePreviewRef';
 import useUpdateToolbarDocs from 'utils/hooks/useUpdateToolbarDocs';
 import { Wrapper } from 'components-light/Wrapper';
 import { Intro } from '../components-light/Intro';
 import { Copyright } from '../components-light/Copyright';
-import { Footer } from '../components-light/Footer';
+import { PageFooter } from '../components-light/PageFooter';
 import { Main } from '../components-light/Main';
 import { Nav } from '../components-light/Nav';
-import { Header } from '../components-light/Header';
-import { About } from '../components-light/About';
-import { Participate } from '../components-light/Participate';
-import { Tickets } from '../components-light/Tickets';
-import { Grants } from '../components-light/Grants';
-import { Program } from '../components-light/Program';
-import { Principles } from '../components-light/Principles';
-import { Location } from '../components-light/Location';
+import { PageHeader } from '../components-light/PageHeader';
 import { Article } from '../components-light/Article';
 import { prismicClient } from '../utils/getPrismicClient';
 import { FooQuery, FooQueryVariables } from '../graphql/foo.graphql';
 import { FooDocument } from '../__generated__/graphql/foo.graphql';
+
+import { Slices } from '../components-light/slices/Slices';
 
 export type Data = FooQuery['allHomepages']['edges'][0]['node'];
 
@@ -42,61 +37,18 @@ const Homepage: React.FC<HomepageProps> = ({ data, preview }) => {
       [data]
     );
 
+    const { copyright, site_title, body } = data;
+
     return (
       <Wrapper>
         <Intro {...{ data }} />
-        <Header site_title={data.site_title} />
+        <PageHeader site_title={site_title} />
         <Nav />
         <Main>
-          <About />
-          <Participate />
-          <Grants />
-          <Tickets />
-          <Program />
-          <Principles />
-          <Location />
-          <section>
-            <Article>
-              <header
-                className="major"
-                style={{ maxWidth: '450px', margin: 'auto' }}
-              >
-                <h2>
-                  <a href="#">See you there!</a>
-                </h2>
-                <p>
-                  We look forward to sharing the Decompression experience with
-                  you!
-                </p>
-              </header>
-            </Article>
-            <ul
-              className="icons alt"
-              style={{ textAlign: 'center', marginTop: '3em' }}
-            >
-              <li>
-                <a
-                  href="#"
-                  className="icon alt fa-facebook"
-                  style={{ color: '#fff' }}
-                >
-                  <span className="label">Facebook</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="icon alt fa-envelope"
-                  style={{ color: '#fff' }}
-                >
-                  <span className="label">Email</span>
-                </a>
-              </li>
-            </ul>
-          </section>
+          <Slices slices={body} />
         </Main>
-        <Footer />
-        <Copyright />
+        <PageFooter />
+        <Copyright who={copyright} />
       </Wrapper>
     );
   }
@@ -110,7 +62,6 @@ export async function getStaticProps({
 }) {
   const ref = previewData ? previewData.ref : null;
   const isPreview = preview || false;
-  // const client = Client();
 
   const { currentLang, isMyMainLanguage } = manageLocal(locales, locale);
 

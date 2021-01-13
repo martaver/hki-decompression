@@ -1,7 +1,7 @@
 // import React from 'react';
 // import Head from 'next/head';
 // import { prismicRepoName } from 'utils/prismicHelpers';
-// import Header from './Header';
+// import PageHeader from './PageHeader';
 // import Footer from './Footer';
 // import {ExitPreviewButton} from './ExitPreviewButton/ExitPreviewButton'
 //
@@ -23,7 +23,7 @@
 //         src={`https://static.cdn.prismic.io/prismic.js?new=true&repo=${prismicRepoName}`}
 //       />
 //     </Head>
-//     <Header
+//     <PageHeader
 //       altLangs={altLangs}
 //       currentLang={lang.currentLang}
 //       menu={menu}

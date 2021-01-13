@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Header({ site_title }) {
+export function PageHeader({ site_title }) {
   return (
     <header id="header">
       <a href="/" className="logo">

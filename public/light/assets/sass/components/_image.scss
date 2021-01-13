@@ -6,7 +6,7 @@
 
 /* Image */
 
-	.image {
+	.image, .block-img {
 		border: 0;
 		border-radius: _size(border-radius);
 		display: inline-block;
@@ -52,7 +52,7 @@
 			}
 		}
 
-		&.main {
+		&.main, &.block-img {
 			display: block;
 			margin: (_size(element-margin) * 2) 0;
 			width: 100%;

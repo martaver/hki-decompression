@@ -4,12 +4,11 @@ import { homepageToolbarDocs } from 'utils/prismicToolbarQueries';
 import useUpdatePreviewRef from 'utils/hooks/useUpdatePreviewRef';
 import useUpdateToolbarDocs from 'utils/hooks/useUpdateToolbarDocs';
 import { Wrapper } from 'components-light/Wrapper';
-import { Copyright } from '../components-light/Copyright';
-import { Footer } from '../components-light/Footer';
-import { Main } from '../components-light/Main';
-import { Nav } from '../components-light/Nav';
-import { Header } from '../components-light/Header';
-import { FullPost } from '../components-light/FullPost';
+import { PageHeader } from '../../PageHeader';
+import { Nav } from '../../Nav';
+import { Main } from '../../Main';
+import { PageFooter } from '../../PageFooter';
+import { Copyright } from '../../Copyright';
 
 function Section() {
   return (
@@ -707,12 +706,12 @@ const Elements = ({ doc, menu, lang, preview }) => {
 
     return (
       <Wrapper>
-        <Header />
+        <PageHeader site_title={'Example site'} />
         <Nav />
         <Main>
           <Section />
         </Main>
-        <Footer />
+        <PageFooter />
         <Copyright />
       </Wrapper>
     );

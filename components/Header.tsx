@@ -8,7 +8,7 @@
 //   currentLang?: unknown;
 // }
 //
-// const Header: React.FC<HeaderProps> = ({ menu, altLangs, currentLang }) => (
+// const PageHeader: React.FC<HeaderProps> = ({ menu, altLangs, currentLang }) => (
 //   <>
 //     <header>
 //       <div className="menu">
@@ -28,5 +28,5 @@
 //   </>
 // );
 //
-// export default Header;
+// export default PageHeader;
 export {};

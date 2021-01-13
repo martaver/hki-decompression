@@ -55,6 +55,20 @@
           },
           {
             "__typename": "__Field",
+            "name": "copyright",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
             "name": "actions",
             "description": null,
             "args": [],
@@ -108,6 +122,30 @@
                   "__typename": "__Type",
                   "kind": "OBJECT",
                   "name": "HomepageSocial_links",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "body",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "__typename": "__Type",
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "__typename": "__Type",
+                  "kind": "UNION",
+                  "name": "HomepageBody",
                   "ofType": null
                 }
               }
@@ -210,6 +248,858 @@
               "__typename": "__Type",
               "kind": "INTERFACE",
               "name": "_Linkable",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "UNION",
+        "name": "HomepageBody",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": [
+          {
+            "__typename": "__Type",
+            "kind": "OBJECT",
+            "name": "HomepageBodyCentered_text",
+            "ofType": null
+          },
+          {
+            "__typename": "__Type",
+            "kind": "OBJECT",
+            "name": "HomepageBodyGrid",
+            "ofType": null
+          },
+          {
+            "__typename": "__Type",
+            "kind": "OBJECT",
+            "name": "HomepageBodyHeader",
+            "ofType": null
+          },
+          {
+            "__typename": "__Type",
+            "kind": "OBJECT",
+            "name": "HomepageBodyFloating_box",
+            "ofType": null
+          },
+          {
+            "__typename": "__Type",
+            "kind": "OBJECT",
+            "name": "HomepageBodyMap",
+            "ofType": null
+          },
+          {
+            "__typename": "__Type",
+            "kind": "OBJECT",
+            "name": "HomepageBodyIcons",
+            "ofType": null
+          }
+        ]
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyCentered_text",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "type",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "label",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "primary",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "OBJECT",
+              "name": "HomepageBodyCentered_textPrimary",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyCentered_textPrimary",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "anchor",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "background",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "text",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyFloating_box",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "type",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "label",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "primary",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "OBJECT",
+              "name": "HomepageBodyFloating_boxPrimary",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyFloating_boxPrimary",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "menu_title",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "background_image",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "text",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyGrid",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "type",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "label",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "primary",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "OBJECT",
+              "name": "HomepageBodyGridPrimary",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "fields",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "__typename": "__Type",
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "__typename": "__Type",
+                  "kind": "OBJECT",
+                  "name": "HomepageBodyGridFields",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyGridFields",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "center",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "align",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "text",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "footer",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyGridPrimary",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "menu_title",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "background",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyHeader",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "type",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "label",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "primary",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "OBJECT",
+              "name": "HomepageBodyHeaderPrimary",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyHeaderPrimary",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "menu_title",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "background",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "text",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyIcons",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "type",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "label",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "primary",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "OBJECT",
+              "name": "HomepageBodyIconsPrimary",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "fields",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "__typename": "__Type",
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "__typename": "__Type",
+                  "kind": "OBJECT",
+                  "name": "HomepageBodyIconsFields",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyIconsFields",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "link",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "INTERFACE",
+              "name": "_Linkable",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "faIcon",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "alt_text",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyIconsPrimary",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "menu_title",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "background",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "text",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyMap",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "type",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "label",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "primary",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "OBJECT",
+              "name": "HomepageBodyMapPrimary",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageBodyMapPrimary",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "label",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "google_maps_url",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "zoom",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "Float",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1534,6 +2424,20 @@
           },
           {
             "__typename": "__EnumValue",
+            "name": "copyright_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__EnumValue",
+            "name": "copyright_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__EnumValue",
             "name": "social_title_ASC",
             "description": null,
             "isDeprecated": false,
@@ -1584,6 +2488,30 @@
             "__typename": "__InputValue",
             "name": "intro_content_fulltext",
             "description": "intro_content",
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "__typename": "__InputValue",
+            "name": "copyright",
+            "description": null,
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "__typename": "__InputValue",
+            "name": "copyright_fulltext",
+            "description": null,
             "type": {
               "__typename": "__Type",
               "kind": "SCALAR",
@@ -3136,6 +4064,17 @@
         "kind": "SCALAR",
         "name": "Boolean",
         "description": "The `Boolean` scalar type represents `true` or `false`.",
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "SCALAR",
+        "name": "Float",
+        "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point).",
         "fields": null,
         "inputFields": null,
         "interfaces": null,

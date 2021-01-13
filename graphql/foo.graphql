@@ -17,6 +17,7 @@ query Foo($lang: String) {
                 }
                 site_title
                 intro_content
+                copyright
                 actions {
                     title
                     anchor
@@ -30,6 +31,69 @@ query Foo($lang: String) {
                     fa_icon
                     link {
                         ...Link
+                    }
+                }
+                body {
+                    __typename
+                    ... on HomepageBodyCentered_text {
+                        type
+                        primary {
+                            anchor
+                            background
+                            text
+                        }
+                    }
+                    ... on HomepageBodyGrid {
+                        type
+                        primary {
+                            menu_title
+                            background
+                        }
+                        fields {
+                            text
+                            footer
+                            center
+                            align
+                        }
+                    }
+                    ... on HomepageBodyHeader {
+                        type
+                        primary {
+                            menu_title
+                            background
+                            text
+                        }
+                    }
+                    ... on HomepageBodyFloating_box {
+                        type
+                        primary {
+                            menu_title
+                            background_image
+                            text
+                        }
+                    }
+                    ... on HomepageBodyMap {
+                        type
+                        primary {
+                            google_maps_url
+                            label
+                            zoom
+                        }
+                    }
+                    ... on HomepageBodyIcons {
+                        type
+                        primary {
+                            menu_title
+                            background
+                            text
+                        }
+                        fields {
+                            faIcon
+                            link {
+                                ...Link
+                            }
+                            alt_text
+                        }
                     }
                 }
             }

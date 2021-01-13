@@ -57,7 +57,8 @@
   "scripts": {
     "schema": "ts-node -T -O '{ \"module\": \"commonjs\" }' ./scripts/getSchema.ts",
     "codegen": "graphql-let",
-    "dev": "concurrently \"next\" \"nodemon\"",
+    "codegen:auto": "nodemon",
+    "dev": "next",
     "build": "yarn codegen && next build",
     "start": "next start"
   },

@@ -2,6 +2,7 @@ import React from 'react';
 import { richText } from '../utils/prismicHelpers';
 import { Data } from '../pages';
 import { _ExternalLink, _Linkable, LinkFragment } from '../graphql/foo.graphql';
+import { Link } from './Links';
 
 interface IntroProps {
   data: Data;
@@ -26,24 +27,6 @@ function actions(actions: Actions) {
     </ul>
   );
 }
-
-interface LinkProps {
-  linkable: LinkFragment;
-  className?: string;
-}
-
-const Link: React.FC<LinkProps> = ({ linkable, className, children }) => {
-  const { __typename } = linkable;
-
-  if (__typename === '_ExternalLink') {
-    const { target, url } = linkable as _ExternalLink;
-    return (
-      <a href={url} {...{ target, className }}>
-        {children}
-      </a>
-    );
-  }
-};
 
 type SocialLinks = Data['social_links'];
 
