@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 
 import 'public/light/assets/sass/main.scss';
+import { repoName } from 'prismic-configuration';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,24 +14,29 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1, user-scalable=no"
         />
-        {/*<link rel="stylesheet" href='assets/css/main.css' />*/}
         <noscript>
           <link rel="stylesheet" href="assets/css/noscript.css" />
         </noscript>
       </Head>
       <Component {...pageProps} />
 
-      {/* Scripts from light */}
+      {/* Google maps */}
       <script
         type="text/javascript"
         src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_TOKEN}`}
-      ></script>
+      />
+
+      {/* Scripts from light */}
       <script src="light/assets/js/jquery.min.js" />
       <script src="light/assets/js/jquery.scrollex.min.js" />
       <script src="light/assets/js/jquery.scrolly.min.js" />
       <script src="light/assets/js/skel.min.js" />
       <script src="light/assets/js/util.js" />
-      {/*<script src="assets/js/main.js" />*/}
+      <script
+        async
+        defer
+        src={`//static.cdn.prismic.io/prismic.js?repo=${repoName}&new=true`}
+      />
     </>
   );
 }

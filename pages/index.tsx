@@ -82,6 +82,13 @@ export async function getStaticProps({
       lang: currentLang,
     },
     fetchPolicy: 'no-cache',
+    context: isPreview
+      ? {
+          headers: {
+            'Prismic-ref': ref,
+          },
+        }
+      : {},
   });
 
   const data = response.data.allHomepages.edges[0].node;
