@@ -35,6 +35,9 @@ export const FloatingBox: FC<FloatingBoxProps> = ({ slice }) => {
       className={bgClass(true)}
       style={{
         backgroundImage: `url("${url}")`,
+        backgroundSize: 'cover',
+        backgroundPositionX: 'center',
+        backgroundPositionY: 'center',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
