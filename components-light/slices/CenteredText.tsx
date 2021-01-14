@@ -5,6 +5,8 @@ import { SliceOf } from 'utils/types';
 import { richText } from 'utils/prismicHelpers';
 import { SliceData } from 'components-light/slices/Slices';
 import { bgClass } from '../../utils/bgClass';
+import { idOf } from '../../utils/idOf';
+import { useNavRegion } from '../useNavTracking';
 
 export type HomepageCenteredTextData = SliceOf<
   SliceData,
@@ -16,10 +18,11 @@ export type AboutProps = {
 };
 
 export const CenteredText: FC<AboutProps> = ({ slice }) => {
-  const { text, anchor, background } = slice.primary;
-
+  const { text, menu_title, background } = slice.primary;
+  const id = idOf(menu_title);
+  const navRef = useNavRegion(id);
   return (
-    <Article id={anchor} className={bgClass(background)}>
+    <Article {...{ id, navRef }} className={bgClass(background)}>
       <header className="major" style={{ maxWidth: '450px', margin: 'auto' }}>
         {richText(text)}
       </header>

@@ -17,29 +17,29 @@ export type SlicesProps = {
 };
 
 export const Slices: FC<SlicesProps> = ({ slices }) => {
-  function SliceHandler(slice: SliceData) {
+  function SliceHandler(slice: SliceData, key: number) {
     if (slice.__typename === 'HomepageBodyCentered_text') {
-      return <CenteredText {...{ slice }} />;
+      return <CenteredText {...{ key, slice }} />;
     }
 
     if (slice.__typename === 'HomepageBodyGrid') {
-      return <Grid {...{ slice }} />;
+      return <Grid {...{ key, slice }} />;
     }
 
     if (slice.__typename === 'HomepageBodyHeader') {
-      return <Header {...{ slice }} />;
+      return <Header {...{ key, slice }} />;
     }
 
     if (slice.__typename === 'HomepageBodyFloating_box') {
-      return <FloatingBox {...{ slice }} />;
+      return <FloatingBox {...{ key, slice }} />;
     }
 
     if (slice.__typename === 'HomepageBodyMap') {
-      return <GoogleMap {...{ slice }} />;
+      return <GoogleMap {...{ key, slice }} />;
     }
 
     if (slice.__typename === 'HomepageBodyIcons') {
-      return <Icons {...{ slice }} />;
+      return <Icons {...{ key, slice }} />;
     }
   }
   return <>{slices.map(SliceHandler)}</>;

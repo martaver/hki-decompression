@@ -16,7 +16,7 @@
 //     <Head>
 //       <meta charSet="utf-8" />
 //       <link rel="icon" href="/favicon.png" type="image/png" />
-//       <title>Multi-language site</title>
+//       <hash>Multi-language site</hash>
 //       <script
 //         async
 //         defer

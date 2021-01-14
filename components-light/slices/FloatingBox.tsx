@@ -5,6 +5,8 @@ import { SliceOf } from 'utils/types';
 import { richText } from 'utils/prismicHelpers';
 import { SliceData } from 'components-light/slices/Slices';
 import { bgClass } from '../../utils/bgClass';
+import { idOf } from '../../utils/idOf';
+import { useNavRegion } from '../useNavTracking';
 
 export type FloatingBoxData = SliceOf<SliceData, 'HomepageBodyFloating_box'>;
 
@@ -25,10 +27,12 @@ type Image = {
 export const FloatingBox: FC<FloatingBoxProps> = ({ slice }) => {
   const { text, menu_title, background_image } = slice.primary;
   const { url } = background_image as Image;
+  const id = idOf(menu_title);
+  const ref = useNavRegion(id);
   return (
     <section
+      {...{ id, ref }}
       className={bgClass(true)}
-      id={menu_title}
       style={{
         backgroundImage: `url("${url}")`,
         display: 'flex',

@@ -14,6 +14,9 @@ module.exports = {
     // a non-locale prefixed path e.g. `/hello`
     defaultLocale: 'en-us',
   },
+  env: {
+    GOOGLE_TOKEN: process.env.GOOGLE_TOKEN,
+  },
   webpack(config, options) {
     config.module.rules.push({
       test: /\.graphql$/,

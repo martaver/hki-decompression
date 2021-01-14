@@ -8,9 +8,8 @@ import { Intro } from '../components-light/Intro';
 import { Copyright } from '../components-light/Copyright';
 import { PageFooter } from '../components-light/PageFooter';
 import { Main } from '../components-light/Main';
-import { Nav } from '../components-light/Nav';
+import { Nav, NavProvider } from '../components-light/Nav';
 import { PageHeader } from '../components-light/PageHeader';
-import { Article } from '../components-light/Article';
 import { prismicClient } from '../utils/getPrismicClient';
 import { FooQuery, FooQueryVariables } from '../graphql/foo.graphql';
 import { FooDocument } from '../__generated__/graphql/foo.graphql';
@@ -40,16 +39,18 @@ const Homepage: React.FC<HomepageProps> = ({ data, preview }) => {
     const { copyright, site_title, body } = data;
 
     return (
-      <Wrapper>
-        <Intro {...{ data }} />
-        <PageHeader site_title={site_title} />
-        <Nav />
-        <Main>
-          <Slices slices={body} />
-        </Main>
-        <PageFooter />
-        <Copyright who={copyright} />
-      </Wrapper>
+      <NavProvider>
+        <Wrapper>
+          <Intro {...{ data }} />
+          <PageHeader site_title={site_title} />
+          <Nav slices={body} />
+          <Main>
+            <Slices slices={body} />
+          </Main>
+          <PageFooter />
+          <Copyright who={copyright} />
+        </Wrapper>
+      </NavProvider>
     );
   }
 };

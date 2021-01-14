@@ -5,6 +5,7 @@ import { Article, ArticleProps, isVerticalAlignment } from '../Article';
 import { richText } from '../../utils/prismicHelpers';
 import { SliceData } from './Slices';
 import { bgClass } from '../../utils/bgClass';
+import { useNavRegion } from '../useNavTracking';
 
 export type GridData = SliceOf<SliceData, 'HomepageBodyGrid'>;
 
@@ -14,9 +15,11 @@ export type GridProps = {
 
 export const Grid: FC<GridProps> = ({ slice }) => {
   const { background, menu_title } = slice.primary;
+  const id = idOf(menu_title);
+  const ref = useNavRegion(id);
   return (
-    <section id={idOf(menu_title)} className={`posts ${bgClass(background)}`}>
-      {slice.fields.map((field) => {
+    <section {...{ id, ref }} className={`posts ${bgClass(background)}`}>
+      {slice.fields.map((field, key) => {
         const { text, footer, center, align } = field;
         const props: ArticleProps = {};
 
@@ -29,7 +32,7 @@ export const Grid: FC<GridProps> = ({ slice }) => {
         }
 
         return (
-          <Article {...props}>
+          <Article {...{ key, ...props }}>
             <div className={center ? 'center' : ''}>{richText(text)}</div>
             <div className={'footer'}>{richText(footer)}</div>
           </Article>

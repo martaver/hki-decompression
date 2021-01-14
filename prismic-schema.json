@@ -369,7 +369,7 @@
         "fields": [
           {
             "__typename": "__Field",
-            "name": "anchor",
+            "name": "menu_title",
             "description": null,
             "args": [],
             "type": {

@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC } from 'react';
+import React, { CSSProperties, FC, Ref } from 'react';
 
 export type VerticalAlignment = 'top' | 'middle' | 'bottom';
 
@@ -9,6 +9,7 @@ export type ArticleProps = {
   id?: string;
   className?: string;
   align?: VerticalAlignment;
+  navRef?: Ref<any>;
 };
 
 export const Article: FC<ArticleProps> = ({
@@ -16,6 +17,7 @@ export const Article: FC<ArticleProps> = ({
   children,
   className = '',
   align = 'top',
+  navRef,
 }) => {
   const style: CSSProperties =
     align === 'middle'
@@ -25,7 +27,7 @@ export const Article: FC<ArticleProps> = ({
       : {};
 
   return (
-    <article {...{ id, style }} className={`post ${className}`}>
+    <article {...{ id, ref: navRef, style }} className={`post ${className}`}>
       {children}
     </article>
   );

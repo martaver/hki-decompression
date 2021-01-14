@@ -38,7 +38,7 @@ query Foo($lang: String) {
                     ... on HomepageBodyCentered_text {
                         type
                         primary {
-                            anchor
+                            menu_title
                             background
                             text
                         }
