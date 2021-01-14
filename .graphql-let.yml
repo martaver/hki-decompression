@@ -1,7 +1,9 @@
 schema: ./prismic-schema.json
 documents: "**/*.graphql"
+config:
+  nonOptionalTypename: true
 plugins:
   - typescript
   - typescript-operations
-  - typescript-react-apollo
+  - typescript-react-apollo:
 cacheDir: __generated__

@@ -7,9 +7,13 @@ import React, {
 } from 'react';
 import { SlicesData } from './slices/Slices';
 import { idOf } from '../utils/idOf';
+import { Data } from '../pages';
+import { Link } from './Links';
 
 export type NavProps = {
   slices: SlicesData;
+  extra_links: Data['extra_nav_links'];
+  extra_icons: Data['extra_nav_icons'];
 };
 
 interface Navable {
@@ -40,8 +44,6 @@ export const NavProvider: FC = ({ children }) => {
     }
   }, []);
 
-  console.log('Current hash: ', hash);
-
   return (
     <NavContext.Provider value={{ hash, setHash }}>
       {children}
@@ -53,7 +55,7 @@ type NavItemProps = {
   title: string;
 };
 
-const NavItem: FC<NavItemProps> = ({ title }) => {
+const NavAnchor: FC<NavItemProps> = ({ title }) => {
   const href = `#${idOf(title)}`;
 
   const [className, setClassName] = useState(undefined);
@@ -71,7 +73,7 @@ const NavItem: FC<NavItemProps> = ({ title }) => {
   );
 };
 
-export const Nav: FC<NavProps> = ({ slices }) => {
+export const Nav: FC<NavProps> = ({ slices, extra_links, extra_icons }) => {
   const titles = slices
     .map((s) => s.primary as Navable)
     .filter((p) => p.menu_title)
@@ -82,21 +84,29 @@ export const Nav: FC<NavProps> = ({ slices }) => {
     <nav id="nav" style={{ position: 'sticky', top: 0 }}>
       <ul className="links">
         {titles.map((title, index) => {
-          return <NavItem {...{ title, key: index }} />;
+          return <NavAnchor {...{ title, key: index }} />;
         })}
 
-        <li>
-          <a href="http://regionals.burningman.org/" target={'__blank'}>
-            BM Regionals
-          </a>
-        </li>
+        {extra_links.map((l, key) => {
+          const { menu_title, link } = l;
+          return (
+            <li {...{ key }}>
+              <Link linkable={link}>{menu_title}</Link>
+            </li>
+          );
+        })}
       </ul>
       <ul className="icons">
-        <li>
-          <a href="#" className="icon fa-facebook">
-            <span className="label">Facebook</span>
-          </a>
-        </li>
+        {extra_icons.map((l, key) => {
+          const { fa_icon, link, alt } = l;
+          return (
+            <li {...{ key }}>
+              <Link linkable={link} className={`icon ${fa_icon}`}>
+                <span className="label">{alt}</span>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );

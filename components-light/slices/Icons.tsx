@@ -36,7 +36,7 @@ export const Icons: FC<IconsProps> = ({ slice }) => {
               <Link
                 linkable={link}
                 className={`icon alt ${faIcon}`}
-                style={{ color: '#fff', cursor: 'pointer' }}
+                style={{ color: '#fff' }}
               >
                 <span className="label">{alt_text}</span>
               </Link>

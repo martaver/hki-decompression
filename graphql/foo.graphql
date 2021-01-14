@@ -1,5 +1,4 @@
 fragment Link on _Linkable {
-    _linkType
     __typename
     ... on _ExternalLink {
         target
@@ -32,6 +31,19 @@ query Foo($lang: String) {
                     link {
                         ...Link
                     }
+                }
+                extra_nav_links {
+                    menu_title
+                    link {
+                        ...Link
+                    }
+                }
+                extra_nav_icons {
+                    fa_icon
+                    link {
+                        ...Link
+                    }
+                    alt
                 }
                 body {
                     __typename

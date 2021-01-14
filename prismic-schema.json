@@ -131,6 +131,54 @@
           },
           {
             "__typename": "__Field",
+            "name": "extra_nav_links",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "__typename": "__Type",
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "__typename": "__Type",
+                  "kind": "OBJECT",
+                  "name": "HomepageExtra_nav_links",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "extra_nav_icons",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "__typename": "__Type",
+                "kind": "NON_NULL",
+                "name": null,
+                "ofType": {
+                  "__typename": "__Type",
+                  "kind": "OBJECT",
+                  "name": "HomepageExtra_nav_icons",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
             "name": "body",
             "description": null,
             "args": [],
@@ -1220,6 +1268,100 @@
                 "name": "String",
                 "ofType": null
               }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageExtra_nav_icons",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "fa_icon",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "link",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "INTERFACE",
+              "name": "_Linkable",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "alt",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "__typename": "__Type",
+        "kind": "OBJECT",
+        "name": "HomepageExtra_nav_links",
+        "description": null,
+        "fields": [
+          {
+            "__typename": "__Field",
+            "name": "menu_title",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "__typename": "__Field",
+            "name": "link",
+            "description": null,
+            "args": [],
+            "type": {
+              "__typename": "__Type",
+              "kind": "INTERFACE",
+              "name": "_Linkable",
+              "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null

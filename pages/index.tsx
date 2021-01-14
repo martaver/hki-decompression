@@ -36,14 +36,24 @@ const Homepage: React.FC<HomepageProps> = ({ data, preview }) => {
       [data]
     );
 
-    const { copyright, site_title, body } = data;
+    const {
+      copyright,
+      site_title,
+      body,
+      extra_nav_links,
+      extra_nav_icons,
+    } = data;
 
     return (
       <NavProvider>
         <Wrapper>
           <Intro {...{ data }} />
           <PageHeader site_title={site_title} />
-          <Nav slices={body} />
+          <Nav
+            slices={body}
+            extra_links={extra_nav_links}
+            extra_icons={extra_nav_icons}
+          />
           <Main>
             <Slices slices={body} />
           </Main>
@@ -71,6 +81,7 @@ export async function getStaticProps({
     variables: {
       lang: currentLang,
     },
+    fetchPolicy: 'no-cache',
   });
 
   const data = response.data.allHomepages.edges[0].node;
