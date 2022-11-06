@@ -19,7 +19,7 @@ function actions(actions: Actions) {
     <ul className="actions">
       {actions.map((a, i) => (
         <li key={i}>
-          <a href={ensureAnchorPrefix(a.anchor)} className="button">
+          <a href={a.href ? a.href : ensureAnchorPrefix(a.anchor)} className="button">
             {a.title}
           </a>
         </li>
