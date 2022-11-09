@@ -13,6 +13,9 @@ export const Link: React.FC<LinkProps> = ({
   children,
   style,
 }) => {
+
+  if(!linkable) return <></>
+
   const { __typename } = linkable;
 
   if (__typename === '_ExternalLink') {
