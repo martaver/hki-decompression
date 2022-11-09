@@ -58,8 +58,8 @@
     "schema": "ts-node -T -O '{ \"module\": \"commonjs\" }' ./scripts/getSchema.ts",
     "codegen": "graphql-let",
     "codegen:auto": "nodemon",
-    "dev": "export NODE_OPTIONS=--openssl-legacy-provider && next",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && yarn codegen && next build",
+    "dev": "next",
+    "build": "yarn codegen && next build",
     "start": "next start"
   },
   "repository": {
