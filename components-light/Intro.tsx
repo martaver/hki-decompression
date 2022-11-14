@@ -49,8 +49,8 @@ export function Intro({ data }: IntroProps) {
     <div id="intro">
       {richText(data.intro_content)}
       {actions(data.actions)}
-      {richText(data.social_title)}
-      {social_links(data.social_links)}
+      {data.social_title ?? richText(data.social_title)}
+      {(data.social_links && data.social_links.length > 0) ?? social_links(data.social_links)}
     </div>
   );
 }
