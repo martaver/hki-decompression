@@ -66,5 +66,8 @@
     "type": "git",
     "url": "https://github.com/prismicio/nextjs-multi-language-site"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20.0.0"
+  }
 }
