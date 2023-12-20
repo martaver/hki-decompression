@@ -1,9 +1,8 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
-import { Article } from 'components-light/Article';
-import { SliceOf } from 'utils/types';
-import { richText } from 'utils/prismicHelpers';
 import { SliceData } from 'components-light/slices/Slices';
+import { richText } from 'utils/prismicHelpers';
+import { SliceOf } from 'utils/types';
 import { bgClass } from '../../utils/bgClass';
 import { idOf } from '../../utils/idOf';
 import { useNavRegion } from '../useNavTracking';
@@ -26,18 +25,23 @@ type Image = {
 
 export const FloatingBox: FC<FloatingBoxProps> = ({ slice }) => {
   const { text, menu_title, background_image } = slice.primary;
-  const { url } = background_image as Image;
+  
   const id = idOf(menu_title);
   const ref = useNavRegion(id);
+
+  const bgStyle = background_image ? {
+    backgroundImage: `url("${background_image.url}")`,
+        backgroundSize: 'cover',
+        backgroundPositionX: 'center',
+        backgroundPositionY: 'center',
+  } : {}
+
   return (
     <section
       {...{ id, ref }}
       className={bgClass(true)}
       style={{
-        backgroundImage: `url("${url}")`,
-        backgroundSize: 'cover',
-        backgroundPositionX: 'center',
-        backgroundPositionY: 'center',
+        ...bgStyle,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
